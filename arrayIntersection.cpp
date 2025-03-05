@@ -22,11 +22,14 @@ int main(){
 
     for(int i=0; i<arra.size(); i++){
 
+        int element=arra[i];
         for(int j=0; j<arrb.size(); j++){
 
             if(arra[i]==arrb[j]){
 
-                intersection.push_back(arrb[j]);
+                
+                arrb[j]=INT_MIN;                  // Remove Duplicate Element
+                intersection.push_back(element);
             }
         }
     }
