@@ -13,6 +13,7 @@
         "utility": "cpp",
         "vector": "cpp",
         "xiosbase": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "xutility": "cpp"
     }
 }
