@@ -9,7 +9,7 @@ void display(vector<int> array){
     cout<<endl;
 }
 
-int bubbleSearch(vector<int> array, int key){
+int binarySearch(vector<int> array, int key){
     int start=0;
     int end=(array.size())-1;
     int mid=start + (end-start)/2;
@@ -41,7 +41,7 @@ int main(){
     display(array);
     cout<<"Value to Search: ";
     cin>>key;
-    int index=bubbleSearch(array, key);    //For Both Odd and Even Number of Elements
+    int index=binarySearch(array, key);    //For Both Odd and Even Number of Elements
     cout<<key<<" is at index: "<<index;
 
     return 0;
