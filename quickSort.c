@@ -1,55 +1,71 @@
-#include <stdio.h>
+#include<stdio.h>
 
-
-void swap(int *a, int *b) {
+void swap(int *a, int *b){
     int temp = *a;
     *a = *b;
     *b = temp;
 }
 
-// Partition function to place the pivot element at the right position
-int partition(int arr[], int low, int high) {
-    int pivot = arr[high]; // Choosing the last element as pivot
-    int i = (low - 1);
-
-    for (int j = low; j < high; j++) {
-        if (arr[j] < pivot) {
-            i++;
-            swap(&arr[i], &arr[j]);
-        }
+void printArray(int array[], int size){
+    for(int i=0; i<size; i++){
+        printf("%d ", array[i]);
     }
-    swap(&arr[i + 1], &arr[high]);
-    return (i + 1);
-}
-
-// QuickSort function
-void quickSort(int arr[], int low, int high) {
-    if (low < high) {
-        int pi = partition(arr, low, high);
-
-        quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
-    }
-}
-
-
-void printArray(int arr[], int size) {
-    for (int i = 0; i < size; i++)
-        printf("%d ", arr[i]);
     printf("\n");
 }
 
-int main() {
-    int arr[] = {10, 7, 8, 9, 1, 5};
-    int n = sizeof(arr) / sizeof(arr[0]);
+int partition(int array[], int low, int high){
 
-    printf("Unsorted array: ");
-    printArray(arr, n);
+        int pivot=array[low];
+        int start=low+1;
+        int end=high;
 
-    quickSort(arr, 0, n - 1);
+        while(start<=end){
+            while(start<=high && array[start]<=pivot){
+                start++;
+            }
+            while(end>=low && array[end]>pivot){
+                end--;
+            }
+            if(start<end){
+                swap(&array[start], &array[end]);
+            }
+        }
+        swap(&array[low], &array[end]);
+        return end;
 
-    printf("Sorted array: ");
-    printArray(arr, n);
-    
-    return 0;
 }
+
+void quickSort(int array[], int low, int high){
+    if(low<high){
+        int pi=partition(array, low, high);
+
+        quickSort(array, low, pi-1);
+        quickSort(array, pi+1, high);
+
+    }
+
+    
+}
+
+int main(){
+
+    int size;
+    printf("Enter the Size of the Array: ");
+    scanf("%d", &size);
+
+    int array[size];
+    printf("Enter the Elements of the Array: ");
+    for(int i=0; i<size; i++){
+        scanf("%d", &array[i]);
+    }
+
+    printf("Unsorted Array: ");
+    printArray(array, size);
+
+    quickSort(array, 0, size-1);
+    printf("Sorted Array: ");
+    printArray(array, size);
+}
+
+
+
