@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Structure for a queue node
 struct Node {
     int data;
     struct Node* next;
 };
 
-// Structure for the queue
 struct Queue {
     struct Node *front, *rear;
 };
