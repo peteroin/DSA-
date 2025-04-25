@@ -5,7 +5,6 @@
 
 #define MAX 100
 
-// Stack implementation
 int stack[MAX];
 int top = -1;
 
