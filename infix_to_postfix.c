@@ -5,7 +5,6 @@
 
 #define MAX 100
 
-// Stack structure
 typedef struct {
     int top;
     char items[MAX];
