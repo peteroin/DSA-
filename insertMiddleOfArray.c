@@ -10,7 +10,6 @@ void insertInMiddle(int arr[], int *n, int element) {
     (*n)++; // Increase the size of the array
 }
 
-// Function to print an array
 void printArray(int arr[], int n) {
     for (int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
