@@ -19,7 +19,7 @@ void printArray(int arr[], int n) {
 
 
 int main() {
-    int arr[10] = {10, 20, 30, 40, 50}; // Initial array with extra space
+    int arr[10] = {10, 20, 30, 40, 50};
     int n = 5; // Current size of the array
     int element;
 
