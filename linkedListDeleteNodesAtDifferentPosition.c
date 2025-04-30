@@ -112,7 +112,6 @@ void displayList(struct Node* head) {
     printf("NULL\n");
 }
 
-// Main function (menu-driven)
 int main() {
     struct Node* head = NULL;
     int choice, data, pos;
