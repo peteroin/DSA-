@@ -96,7 +96,6 @@ void deleteAtMiddle(struct Node** head, int pos) {
     printf("Node at position %d deleted.\n", pos);
 }
 
-// Function to display the linked list
 void displayList(struct Node* head) {
     if (head == NULL) {
         printf("List is empty.\n");
