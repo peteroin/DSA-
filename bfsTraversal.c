@@ -3,139 +3,71 @@
 
 #define MAX 100
 
-// Structure to represent a node in the adjacency list
-struct Node {
-    int vertex;
-    struct Node* next;
-};
+int adj[MAX][MAX];      // Adjacency matrix
+int visited[MAX];       // Visited array
+int queue[MAX];         // Queue array
+int front = -1, rear = -1; // Queue pointers
 
-// Structure to represent the graph
-struct Graph {
-    int numVertices;
-    struct Node** adjLists;
-    int* visited;
-};
-
-// Queue implementation for BFS
-struct Queue {
-    int items[MAX];
-    int front;
-    int rear;
-};
-
-struct Queue* createQueue() {
-    struct Queue* q = malloc(sizeof(struct Queue));
-    q->front = -1;
-    q->rear = -1;
-    return q;
-}
-
-int isEmpty(struct Queue* q) {
-    return q->rear == -1;
-}
-
-void enqueue(struct Queue* q, int value) {
-    if (q->rear == MAX - 1)
-        printf("Queue is full\n");
+// Function to enqueue an element
+void enqueue(int vertex) {
+    if (rear == MAX - 1)
+        printf("Queue Overflow\n");
     else {
-        if (q->front == -1)
-            q->front = 0;
-        q->rear++;
-        q->items[q->rear] = value;
+        if (front == -1) front = 0;
+        queue[++rear] = vertex;
     }
 }
 
-int dequeue(struct Queue* q) {
-    int item;
-    if (isEmpty(q)) {
-        printf("Queue is empty\n");
-        item = -1;
-    } else {
-        item = q->items[q->front];
-        q->front++;
-        if (q->front > q->rear) {
-            // Reset the queue after last element is dequeued
-            q->front = q->rear = -1;
-        }
-    }
-    return item;
+// Function to dequeue an element
+int dequeue() {
+    if (front == -1 || front > rear)
+        return -1;
+    else
+        return queue[front++];
 }
 
-// Function to create a new adjacency list node
-struct Node* createNode(int vertex) {
-    struct Node* newNode = malloc(sizeof(struct Node));
-    newNode->vertex = vertex;
-    newNode->next = NULL;
-    return newNode;
-}
+// Function to perform BFS
+void bfs(int start, int n) {
+    int i;
+    enqueue(start);
+    visited[start] = 1;
 
-// Function to create a graph
-struct Graph* createGraph(int vertices) {
-    struct Graph* graph = malloc(sizeof(struct Graph));
-    graph->numVertices = vertices;
+    printf("BFS traversal starting from node %d: ", start);
 
-    graph->adjLists = malloc(vertices * sizeof(struct Node*));
-    graph->visited = malloc(vertices * sizeof(int));
+    while (front <= rear) {
+        int current = dequeue();
+        printf("%d ", current);
 
-    for (int i = 0; i < vertices; i++) {
-        graph->adjLists[i] = NULL;
-        graph->visited[i] = 0;
-    }
-    return graph;
-}
-
-// Function to add edge
-void addEdge(struct Graph* graph, int src, int dest) {
-    // Add edge from src to dest
-    struct Node* newNode = createNode(dest);
-    newNode->next = graph->adjLists[src];
-    graph->adjLists[src] = newNode;
-
-    // Add edge from dest to src (for undirected graph)
-    newNode = createNode(src);
-    newNode->next = graph->adjLists[dest];
-    graph->adjLists[dest] = newNode;
-}
-
-// BFS traversal
-void bfs(struct Graph* graph, int startVertex) {
-    struct Queue* q = createQueue();
-
-    graph->visited[startVertex] = 1;
-    enqueue(q, startVertex);
-
-    printf("BFS traversal starting from node %d:\n", startVertex);
-
-    while (!isEmpty(q)) {
-        int currentVertex = dequeue(q);
-        printf("%d ", currentVertex);
-
-        struct Node* temp = graph->adjLists[currentVertex];
-
-        while (temp) {
-            int adjVertex = temp->vertex;
-
-            if (graph->visited[adjVertex] == 0) {
-                graph->visited[adjVertex] = 1;
-                enqueue(q, adjVertex);
+        for (i = 0; i < n; i++) {
+            if (adj[current][i] == 1 && !visited[i]) {
+                enqueue(i);
+                visited[i] = 1;
             }
-            temp = temp->next;
         }
     }
     printf("\n");
 }
 
+// Main function
 int main() {
-    int vertices = 6;
+    int n, i, j, start;
 
-    struct Graph* graph = createGraph(vertices);
-    addEdge(graph, 0, 1);
-    addEdge(graph, 0, 2);
-    addEdge(graph, 1, 3);
-    addEdge(graph, 1, 4);
-    addEdge(graph, 2, 5);
+    printf("Enter number of vertices: ");
+    scanf("%d", &n);
 
-    bfs(graph, 0);  // Change the starting node here
+    printf("Enter adjacency matrix (%d x %d):\n", n, n);
+    for (i = 0; i < n; i++)
+        for (j = 0; j < n; j++)
+            scanf("%d", &adj[i][j]);
+
+    printf("Enter starting node (0 to %d): ", n - 1);
+    scanf("%d", &start);
+
+    // Initialize visited array
+    for (i = 0; i < n; i++)
+        visited[i] = 0;
+
+    bfs(start, n);
 
     return 0;
 }
