@@ -48,7 +48,6 @@ void bfs(int start, int n) {
     printf("\n");
 }
 
-// Main function
 int main() {
     int n, i, j, start;
 
