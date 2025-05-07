@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Definition of a node
 struct Node {
     int data;
     struct Node* next;
