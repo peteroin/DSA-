@@ -50,7 +50,6 @@ void reverse(struct Node** head_ref) {
     *head_ref = prev; // Update head to new first node
 }
 
-// Driver function
 int main() {
     struct Node* head = NULL;
     int n, value;
