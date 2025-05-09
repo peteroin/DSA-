@@ -54,7 +54,6 @@ int main() {
     struct Node* head = NULL;
     int n, value;
 
-    // Get the number of nodes
     printf("Enter the number of elements: ");
     scanf("%d", &n);
 
