@@ -25,7 +25,6 @@ void append(struct Node** head_ref, int new_data) {
     last->next = new_node;
 }
 
-// Function to display the linked list
 void display(struct Node* head) {
     struct Node* temp = head;
     while (temp != NULL) {
