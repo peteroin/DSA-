@@ -56,7 +56,6 @@ int main() {
     printf("Enter the number of elements: ");
     scanf("%d", &n);
 
-    // Get user input to create the linked list
     printf("Enter %d elements:\n", n);
     for (int i = 0; i < n; i++) {
         scanf("%d", &value);
