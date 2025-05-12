@@ -34,7 +34,6 @@ void display(struct Node* head) {
     printf("NULL\n");
 }
 
-// Function to reverse the linked list
 void reverse(struct Node** head_ref) {
     struct Node* prev = NULL;
     struct Node* current = *head_ref;
