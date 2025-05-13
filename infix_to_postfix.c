@@ -15,7 +15,6 @@ void initStack(Stack *s) {
     s->top = -1;
 }
 
-// Function to check if stack is empty
 int isEmpty(Stack *s) {
     return s->top == -1;
 }
