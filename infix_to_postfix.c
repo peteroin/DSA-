@@ -24,7 +24,6 @@ int isFull(Stack *s) {
     return s->top == MAX - 1;
 }
 
-// Function to push an element onto the stack
 void push(Stack *s, char c) {
     if (!isFull(s)) {
         s->items[++(s->top)] = c;
