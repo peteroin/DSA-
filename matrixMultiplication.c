@@ -7,7 +7,6 @@ int main(){
     int a[N][N], b[N][N], c[N][N], arow, acolumn, brow, bcolumn;
 
 
-    // Matrix A
     printf("For Matrix A \n");
 
     printf("Enter Number of Rows & Columns: ");
