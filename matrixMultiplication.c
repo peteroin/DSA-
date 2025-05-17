@@ -23,8 +23,6 @@ int main(){
     }
 
 
-
-    // Matrix B
     printf("\n \n For Matrix B\n");
 
     printf("Enter Number of Rows & Columns: ");
