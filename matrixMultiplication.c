@@ -63,7 +63,7 @@ int main(){
 
 
 
-    // Printing the Product Matrix
+
 
     printf("Printing the Product Matrix: \n");
     for(int i=0; i<arow; i++){
