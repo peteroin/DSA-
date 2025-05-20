@@ -17,8 +17,7 @@ int main(){
             scanf("%d", &a[i][j]);
         }
     }
-
-
+    
     printf("\n \n For Matrix B\n");
     printf("Enter Number of Rows & Columns: ");
     scanf("%d %d", &brow, &bcolumn);
