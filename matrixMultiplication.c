@@ -1,7 +1,6 @@
 #include<stdio.h>
 #define N 50
 
-
 int main(){
 
     int a[N][N], b[N][N], c[N][N], arow, acolumn, brow, bcolumn;
