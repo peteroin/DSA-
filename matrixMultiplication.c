@@ -35,21 +35,21 @@ int main(){
     }
     else{
 
-    // Multiplying Both Matrices
-    for(int i=0; i<arow; i++){
+        // Multiplying Both Matrices
+        for(int i=0; i<arow; i++){
 
-        for(int j=0; j<bcolumn; j++){
+            for(int j=0; j<bcolumn; j++){
 
-            int sum=0;
+                int sum=0;
 
-            for(int k=0; k<brow; k++){
+                for(int k=0; k<brow; k++){
 
-                sum+=a[i][k]*b[k][j];
+                    sum+=a[i][k]*b[k][j];
+                }
+
+                c[i][j]=sum;
             }
-
-            c[i][j]=sum;
         }
-    }
 
     printf("Printing the Product Matrix: \n");
     for(int i=0; i<arow; i++){
