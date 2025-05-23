@@ -51,7 +51,7 @@ int main(){
             }
         }
 
-    printf("Printing the Product Matrix: \n");
+        printf("Printing the Product Matrix: \n");
     for(int i=0; i<arow; i++){
 
         for(int j=0; j<bcolumn; j++){
