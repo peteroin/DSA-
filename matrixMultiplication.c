@@ -52,14 +52,14 @@ int main(){
         }
 
         printf("Printing the Product Matrix: \n");
-    for(int i=0; i<arow; i++){
+        for(int i=0; i<arow; i++){
 
-        for(int j=0; j<bcolumn; j++){
+            for(int j=0; j<bcolumn; j++){
 
-            printf("%d  ", c[i][j]);
+                printf("%d  ", c[i][j]);
+            }
+            printf("\n");
         }
-        printf("\n");
-    }
     }    
     return 0;
 }
