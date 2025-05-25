@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-// Function to perform Bubble Sort
 void bubbleSort(int arr[], int n) {
     int i, j, temp;
     int swapped;
