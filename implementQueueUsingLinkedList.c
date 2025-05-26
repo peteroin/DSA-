@@ -55,7 +55,7 @@ void dequeue(struct Queue* q) {
     free(temp);
 }
 
-// Function to display the queue
+
 void display(struct Queue* q) {
     struct Node* temp = q->front;
     if (!temp) {
