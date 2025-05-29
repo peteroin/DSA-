@@ -21,7 +21,7 @@ void append(struct Node** head_ref, int new_data) {
 
     while (last->next != NULL)
         last = last->next;
-
+        
     last->next = new_node;
 }
 
