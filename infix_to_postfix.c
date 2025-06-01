@@ -104,7 +104,7 @@ void infixToPostfix(char *infix, char *postfix) {
             push(&s, token);
         }
     }
-
+ 
     // Pop remaining operators in stack
     while (!isEmpty(&s)) {
         postfix[j++] = pop(&s);
