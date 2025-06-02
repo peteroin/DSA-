@@ -6,7 +6,7 @@ void merge(int arr[], int left, int mid, int right) {
     int n2 = right - mid;
 
     int leftArr[n1], rightArr[n2];
-
+ 
     for (int i = 0; i < n1; i++)
         leftArr[i] = arr[left + i];
     for (int i = 0; i < n2; i++)
