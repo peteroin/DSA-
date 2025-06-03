@@ -16,7 +16,7 @@ void printArray(int arr[], int n) {
     }
     printf("\n");
 }
-
+ 
 int main() {
     int arr[10] = {10, 20, 30, 40, 50};
     int n = 5;
