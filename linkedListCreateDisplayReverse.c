@@ -60,7 +60,7 @@ int main() {
         scanf("%d", &value);
         append(&head, value);
     }
-
+ 
     printf("\nOriginal Linked List:\n");
     display(head);
 
